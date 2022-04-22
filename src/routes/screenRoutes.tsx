@@ -1,3 +1,4 @@
+import { HowItWorksScreen } from '../screens/HowItWorks';
 import { IntroScreen } from '../screens/Intro';
 
 export type Screens = {
@@ -6,4 +7,5 @@ export type Screens = {
 
 export const screens: Screens = {
   intro: (props) => <IntroScreen {...props} />,
+  'how-it-works': (props) => <HowItWorksScreen {...props} />,
 };

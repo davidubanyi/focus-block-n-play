@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import { Button } from '../components/base/Button';
-import { H2Thin, H2Med } from '../components/base/Typography';
+import { H2Med } from '../components/base/Typography';
+import { AppRouteContext } from '../providers/AppRouteProvider';
 
 export const IntroScreen = ({ ...props }) => {
+  const { goToScreen } = useContext(AppRouteContext);
   console.log(props);
   return (
     <div className="flex items-center flex-col p-4">
@@ -15,7 +18,7 @@ export const IntroScreen = ({ ...props }) => {
         and pay penalties for breaking the your set time.
       </div>
       <Button>Use without wallet</Button>
-      <Button>Connect wallet</Button>
+      <Button onClick={()=>goToScreen('how-it-works')}>Connect wallet</Button>
     </div>
   );
 };
