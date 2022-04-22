@@ -1,12 +1,10 @@
+import { useContext, useState } from 'react';
 import './App.css';
-import { IntroScreen } from './screens/Intro';
+import { AppRouteContext } from './providers/AppRouteProvider';
 
 function App() {
-  return (
-    <div className="App">
-      <IntroScreen />
-    </div>
-  );
+  const { activeScreen } = useContext(AppRouteContext);
+  return <div className="App">{activeScreen}</div>;
 }
 
 export default App;
